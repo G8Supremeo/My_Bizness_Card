@@ -115,17 +115,28 @@ const BusinessCard: React.FC = () => {
                                     Languages & Tools: Python, JavaScript, PyTorch, Databricks. Impact: Translating massive telemetry into automated ROI.
                                 </p>
                             </div>
-                            <div className="flex flex-wrap gap-2">
-                                {['UI/UX', 'React 19', 'Framer', 'Three.js'].map((tag, i) => (
-                                    <motion.span
-                                        key={tag}
+                            <div className="flex flex-wrap justify-center gap-2">
+                                {[
+                                    { name: 'Computer Vision', url: 'https://github.com/g8supremeo' },
+                                    { name: 'CNNs', url: 'https://github.com/g8supremeo' },
+                                    { name: 'Transformers', url: 'https://github.com/g8supremeo' },
+                                    { name: 'NLP', url: 'https://github.com/g8supremeo' },
+                                    { name: 'Fullstack ML Eng', url: 'https://github.com/g8supremeo' }
+                                ].map((tag, i) => (
+                                    <motion.a
+                                        key={tag.name}
+                                        href={tag.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={{ opacity: 1, scale: 1 }}
+                                        whileHover={{ y: -2, scale: 1.05 }}
                                         transition={{ delay: 0.5 + (i * 0.1) }}
-                                        className={`px-3 py-1.5 rounded-full border text-[10px] font-bold tracking-wide ${isDarkMode ? 'bg-white/5 border-white/10 text-white/90' : 'bg-black/5 border-black/10 text-slate-800'}`}
+                                        className={`px-3 py-1.5 rounded-full border text-[10px] font-bold tracking-wide transition-colors cursor-pointer ${isDarkMode ? 'bg-white/5 border-white/10 text-white/90 hover:bg-sky-500/20 hover:border-sky-500/50 hover:text-sky-300' : 'bg-black/5 border-black/10 text-slate-800 hover:bg-rose-500/10 hover:border-rose-500/30 hover:text-rose-600'}`}
                                     >
-                                        {tag}
-                                    </motion.span>
+                                        {tag.name}
+                                    </motion.a>
                                 ))}
                             </div>
                         </div>
