@@ -1,5 +1,6 @@
-import React, { useState, MouseEvent } from 'react';
-import { motion, useMotionValue, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import type { MouseEvent } from 'react';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import { QRCodeSVG } from 'qrcode.react';
 import { Moon, Sun, Download, Sparkles, RefreshCw } from 'lucide-react';
 import { FaLinkedin, FaGithub, FaGlobe } from 'react-icons/fa';
@@ -132,7 +133,7 @@ const BusinessCard: React.FC = () => {
                         {/* MINIMAL SOCIAL TAGS IN FRONT */}
                         <div className="mt-3 flex justify-center gap-6">
                             {[
-                                { Icon: FaLinkedin, url: 'https://linkedin.com/in/supreme-oghenewoakpo' },
+                                { Icon: FaLinkedin, url: 'https://linkedin.com/in/supreme-oghenewoakpo-195ab134' },
                                 { Icon: FaGithub, url: 'https://github.com/g8supremeo' },
                                 { Icon: FaGlobe, url: 'https://g8supremeo.github.io' }
                             ].map(({ Icon, url }, idx) => (
